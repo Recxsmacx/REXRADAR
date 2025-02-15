@@ -1,0 +1,142 @@
+@import "_config";
+
+$secondary-color: #0448bc; // Light Blue
+$hover-color: #1B98E0; // Brighter Blue for hover effects
+
+@keyframes colorShift {
+	0% { background-color: #0A192F; } // Dark Blue
+	25% { background-color: #0e2a4e; } // Slightly lighter blue
+	50% { background-color: #07264c; } // Even lighter blue
+	75% { background-color: #122A4A; } // Back to slightly darker
+	100% { background-color: #0A192F; } // Reset to original
+}
+
+@import "_config";
+
+.sidebar {
+	min-height: 100vh;
+	width: 15%;
+	min-width: 250px;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	animation: colorShift 6s infinite alternate ease-in-out;
+	border-right: 1px solid lighten($base-color, 10%);
+
+	.brand {
+  
+		width: 200px;
+		height: 200px;
+		position: relative;
+		margin: 0 auto;
+		
+	  }
+	  .brand:before {
+		
+		background-size: 100% 100%;
+		content: "RЯ";
+		line-height: 205px;
+		color: #00eaff;
+		font-size: 20px;
+		font-family: "HEAVITAS", "Helvetica Rounded", Arial, sans-serif;
+		font-weight: bold;
+		text-align: center;
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+		position: absolute;
+		
+		z-index: 99999 !important;
+	  }
+	  
+	  .logo{
+		animation: 5s linear infinite;
+		animation-name: rotate-0;
+		animation-delay: 0s;
+		transform-origin: 50% 50%;
+		transform: rotate(0deg);
+		
+	  }
+	  
+	  
+	  svg path{
+		positon:absolute;
+		fill:none;
+		stroke-width:2;
+		top:0;
+		left:0;
+		/*mix-blend-mode: multiply;*/
+		transform-origin: 50% 50%;
+		transform: rotate(0deg) ;
+		animation: 4s linear infinite;
+	  }
+	  
+	  .logo svg path:nth-child(1) {
+		opacity: 1;
+		animation-name: rotate-1;
+		animation-delay: .5s;
+	  }
+	  .logo svg path:nth-child(2) {
+		opacity: .5;
+		animation-name: rotate-2;
+		animation-delay: .6s;
+	  }
+	  .logo svg path:nth-child(3) {
+		opacity: .8;
+		animation-name: rotate-3;
+		animation-delay: .7s;
+	  }
+	  
+	  
+	  @keyframes scale-1 {
+		0%{
+		  transform: scale(1);
+		}50% {
+		  transform: scale(.9);
+		}100% {
+		  transform: scale(1);
+		} 
+	  }
+	  
+	  @keyframes rotate-0 {
+		from { transform: rotate(0deg); }
+		  to { transform: rotate(360deg); }
+	  } 
+	  
+	  @keyframes rotate-1 {
+		from { transform: rotate(0deg); }
+		  to { transform: rotate(360deg); }
+	  }
+	  
+	  @keyframes rotate-2 {
+		from { transform: rotate(0deg); }
+		  to { transform: rotate(-360deg); }
+	  }
+	  
+	  @keyframes rotate-3 {
+		from { transform: rotate(0deg); }
+		  to { transform: rotate(0deg); }
+	  }
+	a {
+		display: block;
+		text-decoration: none;
+		font-size: 1rem;
+		width: 80%;
+		margin: 1.5rem auto;
+		color: #eee;
+		.fa-solid {
+			margin-right: 1rem;
+		}
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+}
+
+
+
+
+
+
+
